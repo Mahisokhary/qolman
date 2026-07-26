@@ -1,0 +1,11 @@
+# Ignore all dotfiles
+.*
+
+# Ignore build directory
+build
+
+# Include dotfiles that should be included
+!.gitignore
+!.github
+!.gitmodules
+

@@ -1,0 +1,2 @@
+include $(wildcard make/*.mak)
+

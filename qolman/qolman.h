@@ -9,5 +9,7 @@ extern "C" {
 }
 #endif
 
+#include <qolman/level/level.h>
+
 #endif
 

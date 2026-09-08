@@ -4,6 +4,8 @@
 #include <qolman/qolman.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdio.h>
+#include <stdarg.h>
 
 #ifdef __cplusplus
 extern "C" {

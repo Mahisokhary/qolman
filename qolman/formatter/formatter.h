@@ -12,6 +12,11 @@ extern "C" {
  */
 typedef char* (*qolman_formatter_t)(qolman_record_t record);
 
+/*
+ * Formats record into human-readable text
+ */
+char *qolman_formatter_text(qolman_record_t record);
+
 #ifdef __cplusplus
 }
 #endif

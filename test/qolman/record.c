@@ -1,5 +1,5 @@
 #include <test/test.h>
-#include <qolman/record/record.internal.h>
+#include <qolman/qolman.internal.h>
 
 bool test_qolman_record_create_destroy() {
 	test_run_log("qolman_record_create_destroy");

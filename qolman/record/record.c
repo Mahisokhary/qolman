@@ -1,4 +1,4 @@
-#include "record.internal.h"
+#include <qolman/qolman.internal.h>
 
 qolman_result_t qolman_record_create(qolman_record_t *record, time_t t, qolman_level_t level, char *label, char *description) {
 	if (!t) time(&t);

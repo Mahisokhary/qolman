@@ -18,5 +18,9 @@ extern "C" {
 }
 #endif
 
+#include <qolman/level/level.internal.h>
+#include <qolman/record/record.internal.h>
+#include <qolman/formatter/formatter.internal.h>
+
 #endif
 

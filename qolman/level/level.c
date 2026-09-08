@@ -1,4 +1,4 @@
-#include "level.internal.h"
+#include <qolman/qolman.internal.h>
 
 /*
  * This array should always be sorted by importance

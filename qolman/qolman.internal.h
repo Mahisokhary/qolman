@@ -23,6 +23,7 @@ extern "C" {
 #include <qolman/level/level.internal.h>
 #include <qolman/record/record.internal.h>
 #include <qolman/formatter/formatter.internal.h>
+#include <qolman/handler/handler.internal.h>
 
 #endif
 

@@ -22,6 +22,7 @@ typedef enum {
 #include <qolman/level/level.h>
 #include <qolman/record/record.h>
 #include <qolman/formatter/formatter.h>
+#include <qolman/handler/handler.h>
 
 #endif
 

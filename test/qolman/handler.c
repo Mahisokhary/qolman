@@ -19,8 +19,20 @@ static qolman_result_t _handler_create(qolman_handler_t *handler) {
 	return QOLMAN_RESULT_OK;
 }
 
+bool test_qolman_handler_create_destroy() {
+	test_run_log("qolman_handler_create_destroy");
+	qolman_handler_t handler;
+
+	bool success = 1;
+	success &= _handler_create(&handler) == QOLMAN_RESULT_OK;
+	success &= qolman_handler_destroy(handler) == QOLMAN_RESULT_OK;
+	test_result_log(success);
+	return success;
+}
+
 bool test_qolman_handler() {
 	bool success = 1;
+	success &= test_qolman_handler_create_destroy();
 	return success;
 }
 

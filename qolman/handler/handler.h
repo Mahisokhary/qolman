@@ -25,6 +25,11 @@ typedef void (*qolman_handler_function_destroy)(qolman_handler_t handler);
  */
 qolman_result_t qolman_handler_create(qolman_handler_t *handler, qolman_handler_function_handle handle, qolman_handler_function_destroy destroy, size_t data_size);
 
+/*
+ * Destroys the log handler
+ */
+qolman_result_t qolman_handler_destroy(qolman_handler_t handler);
+
 #ifdef __cplusplus
 }
 #endif

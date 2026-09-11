@@ -10,3 +10,9 @@ qolman_result_t qolman_handler_create(qolman_handler_t *handler, qolman_handler_
 	return QOLMAN_RESULT_OK;
 }
 
+qolman_result_t qolman_handler_destroy(qolman_handler_t h) {
+	h->destroy(h);
+	free(h);
+	return QOLMAN_RESULT_OK;
+}
+

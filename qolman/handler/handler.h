@@ -20,6 +20,11 @@ typedef void (*qolman_handler_function_handle)(qolman_handler_t handler, char *l
  */
 typedef void (*qolman_handler_function_destroy)(qolman_handler_t handler);
 
+/*
+ * Creates a log handler
+ */
+qolman_result_t qolman_handler_create(qolman_handler_t *handler, qolman_handler_function_handle handle, qolman_handler_function_destroy destroy, size_t data_size);
+
 #ifdef __cplusplus
 }
 #endif

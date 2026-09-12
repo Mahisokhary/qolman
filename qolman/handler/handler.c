@@ -34,3 +34,8 @@ qolman_result_t qolman_handler_formatter_set(qolman_handler_t h, qolman_formatte
 	return QOLMAN_RESULT_OK;
 }
 
+qolman_result_t qolman_handler_handle(qolman_handler_t h, char *log) {
+	h->handle(h, log);
+	return QOLMAN_RESULT_OK;
+}
+

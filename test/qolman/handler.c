@@ -25,6 +25,8 @@ bool test_qolman_handler_create_destroy() {
 
 	bool success = 1;
 	success &= _handler_create(&handler) == QOLMAN_RESULT_OK;
+	success &= qolman_handler_handle(handler, "my log") == QOLMAN_RESULT_OK;
+	success &= strcmp("my log", *((char **) handler->data)) == 0;
 	success &= qolman_handler_destroy(handler) == QOLMAN_RESULT_OK;
 	test_result_log(success);
 	return success;

@@ -50,6 +50,11 @@ qolman_formatter_t qolman_handler_formatter(qolman_handler_t handler);
  */
 qolman_result_t qolman_handler_formatter_set(qolman_handler_t handler, qolman_formatter_t formatter);
 
+/*
+ * Handles a log with the log handler
+ */
+qolman_result_t qolman_handler_handle(qolman_handler_t handler, char *log);
+
 #ifdef __cplusplus
 }
 #endif

@@ -40,6 +40,16 @@ qolman_level_t qolman_handler_level(qolman_handler_t handler);
  */
 qolman_result_t qolman_handler_level_set(qolman_handler_t handler, qolman_level_t level);
 
+/*
+ * Returns formatter of handler
+ */
+qolman_formatter_t qolman_handler_formatter(qolman_handler_t handler);
+
+/*
+ * Sets formatter of handler
+ */
+qolman_result_t qolman_handler_formatter_set(qolman_handler_t handler, qolman_formatter_t formatter);
+
 #ifdef __cplusplus
 }
 #endif

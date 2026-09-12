@@ -25,3 +25,12 @@ qolman_result_t qolman_handler_level_set(qolman_handler_t h, qolman_level_t leve
 	return QOLMAN_RESULT_OK;
 }
 
+qolman_formatter_t qolman_handler_formatter(qolman_handler_t h) {
+	return h->formatter;
+}
+
+qolman_result_t qolman_handler_formatter_set(qolman_handler_t h, qolman_formatter_t formatter) {
+	h->formatter = formatter;
+	return QOLMAN_RESULT_OK;
+}
+

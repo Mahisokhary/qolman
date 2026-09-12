@@ -16,3 +16,12 @@ qolman_result_t qolman_handler_destroy(qolman_handler_t h) {
 	return QOLMAN_RESULT_OK;
 }
 
+qolman_level_t qolman_handler_level(qolman_handler_t h) {
+	return h->level;
+}
+
+qolman_result_t qolman_handler_level_set(qolman_handler_t h, qolman_level_t level) {
+	h->level = level;
+	return QOLMAN_RESULT_OK;
+}
+

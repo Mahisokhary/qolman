@@ -8,6 +8,7 @@ An object to store information about a log record
 | [level](level.md) | level of the log                       | `error`                                  |   yes    |
 | label             | one line short info about the log      | `something went wrong`                   |   yes    |
 | description       | multiline line full info about the log | `something went really wrong at line 26` |    no    |
+| logger            | the component logging the log          | `service`                                |   yes    |
 
 ## Implementation
 - Package [record](../../qolman/record):
@@ -16,5 +17,6 @@ An object to store information about a log record
         - `level`: Fully implemented (constructor arg)
         - `label`: Fully implemented (constructor arg)
         - `description`: Fully implemented (constructor arg)
+        - `logger`: Not implemented
 
 [back](index.md)

@@ -13,6 +13,7 @@ struct qolman_record {
 	qolman_level_t level;
 	char *label;
 	char *description;
+	char *logger;
 };
 
 #ifdef __cplusplus

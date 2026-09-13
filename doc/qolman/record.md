@@ -17,6 +17,6 @@ An object to store information about a log record
         - `level`: Fully implemented (constructor arg)
         - `label`: Fully implemented (constructor arg)
         - `description`: Fully implemented (constructor arg)
-        - `logger`: Not implemented
+        - `logger`: Fully implemented (constructor arg)
 
 [back](index.md)

@@ -30,6 +30,10 @@ qolman_level_t qolman_record_level(qolman_record_t r) {
 	return r->level;
 }
 
+char *qolman_record_logger(qolman_record_t r) {
+	return r->logger;
+}
+
 char *qolman_record_label(qolman_record_t r) {
 	return r->label;
 }

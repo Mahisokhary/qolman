@@ -34,6 +34,11 @@ time_t qolman_record_time(qolman_record_t r);
 qolman_level_t qolman_record_level(qolman_record_t r);
 
 /*
+ * Returns logger of the record
+ */
+char *qolman_record_logger(qolman_record_t r);
+
+/*
  * Returns label of the record
  */
 char *qolman_record_label(qolman_record_t r);

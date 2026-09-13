@@ -29,9 +29,10 @@ char *qolman_formatter_text(qolman_record_t record) {
 	struct tm *t = localtime(&record->time);
 	b.b = malloc(b.s);
 
-	_buffer_write(&b, "[%04d-%02d-%02d %02d:%02d:%02d] [%s] %s\n",
+	_buffer_write(&b, "[%04d-%02d-%02d %02d:%02d:%02d] [%s] [%s] %s\n",
 		t->tm_year + 1900, t->tm_mon + 1, t->tm_mday, t->tm_hour, t->tm_min, t->tm_sec,
 		record->level->label,
+		record->logger,
 		record->label
 	);
 

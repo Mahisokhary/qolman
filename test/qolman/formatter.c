@@ -4,9 +4,9 @@
 bool test_qolman_formatter_text() {
 	test_run_log("qolman_formatter_text");
 	struct qolman_level level = { 2147483647, "godlevel" };
-	struct qolman_record record = { 1676385060, &level, "phoenix", "some details\nsome more details\n" };
-	char *excpected = "[2023-02-14 18:01:00] [godlevel] phoenix\n\tsome details\n\tsome more details\n";
-	char *excpected2 = "[2023-02-14 18:01:00] [godlevel] phoenix\n";
+	struct qolman_record record = { 1676385060, &level, "phoenix", "some details\nsome more details\n", "god" };
+	char *excpected = "[2023-02-14 18:01:00] [godlevel] [god] phoenix\n\tsome details\n\tsome more details\n";
+	char *excpected2 = "[2023-02-14 18:01:00] [godlevel] [god] phoenix\n";
 	char *formatted;
 
 	bool success = 1;

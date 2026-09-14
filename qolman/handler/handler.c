@@ -58,3 +58,7 @@ qolman_result_t qolman_handler_file(qolman_handler_t *handler, char *f) {
 	return qolman_handler_filep(handler, fopen(f, "a"));
 }
 
+void *qolman_handler_data(qolman_handler_t h) {
+	return h->data;
+}
+

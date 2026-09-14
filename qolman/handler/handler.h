@@ -75,6 +75,11 @@ qolman_result_t qolman_handler_filep(qolman_handler_t *handler, FILE *fp);
  */
 qolman_result_t qolman_handler_file(qolman_handler_t *handler, char *f);
 
+/*
+ * Returns pointer to data of the handler
+ */
+void *qolman_handler_data(qolman_handler_t h);
+
 #ifdef __cplusplus
 }
 #endif

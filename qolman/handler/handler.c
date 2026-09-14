@@ -49,3 +49,12 @@ qolman_result_t qolman_handler_stderr(qolman_handler_t *handler) {
 	return QOLMAN_RESULT_OK;
 }
 
+qolman_result_t qolman_handler_filep(qolman_handler_t *handler, FILE *fp) {
+	qolman_run(qolman_handler_filep_create(handler, fp, true));
+	return QOLMAN_RESULT_OK;
+}
+
+qolman_result_t qolman_handler_file(qolman_handler_t *handler, char *f) {
+	return qolman_handler_filep(handler, fopen(f, "a"));
+}
+

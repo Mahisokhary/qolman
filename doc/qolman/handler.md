@@ -16,12 +16,14 @@ An object containing function to publish log records whether to stdout or a file
 > `handler` type used in properties is a pointer to handler object in implementation
 
 ## Implementation
-- [ ] Handler core (typedefs, functions, ...)
-    - [x] handle: set by create function (no getter)
-    - [x] destroy: set by create function (no getter)
-    - [x] data: allocated by create function
+- [x] Handler core (typedefs, functions, ...)
+    - [x] handle: set by create function, used by handle function
+    - [x] destroy: set by create function, used by destroy function
+    - [x] data: allocated by create function and has getter
+    - [x] level: has setter and getter
+    - [x] formatter: has setter and getter
 - [x] Stdout handler
 - [x] Stderr handler
-- [ ] File handler
+- [x] File handler
 
 [back](index.md)

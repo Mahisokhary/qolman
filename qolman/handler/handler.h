@@ -60,6 +60,11 @@ qolman_result_t qolman_handler_handle(qolman_handler_t handler, char *log);
  */
 qolman_result_t qolman_handler_stdout(qolman_handler_t *handler);
 
+/*
+ * Creates a handler that writes log records in stderr
+ */
+qolman_result_t qolman_handler_stderr(qolman_handler_t *handler);
+
 #ifdef __cplusplus
 }
 #endif

@@ -21,7 +21,7 @@ An object containing function to publish log records whether to stdout or a file
     - [x] destroy: set by create function (no getter)
     - [x] data: allocated by create function (no getter)
 - [x] Stdout handler
-- [ ] Stderr handler
+- [x] Stderr handler
 - [ ] File handler
 
 [back](index.md)

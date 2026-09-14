@@ -39,3 +39,8 @@ qolman_result_t qolman_handler_handle(qolman_handler_t h, char *log) {
 	return QOLMAN_RESULT_OK;
 }
 
+qolman_result_t qolman_handler_stdout(qolman_handler_t *handler) {
+	qolman_run(qolman_handler_filep_create(handler, stdout, false));
+	return QOLMAN_RESULT_OK;
+}
+

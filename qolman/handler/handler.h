@@ -55,6 +55,11 @@ qolman_result_t qolman_handler_formatter_set(qolman_handler_t handler, qolman_fo
  */
 qolman_result_t qolman_handler_handle(qolman_handler_t handler, char *log);
 
+/*
+ * Creates a handler that writes log records in stdout
+ */
+qolman_result_t qolman_handler_stdout(qolman_handler_t *handler);
+
 #ifdef __cplusplus
 }
 #endif

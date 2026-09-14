@@ -16,6 +16,12 @@ struct qolman_handler {
 	char data[];
 };
 
+/*
+ * Creates a file pointer handler
+ * close: whether the file should or shouldnt be closed by the handler
+ */
+qolman_result_t qolman_handler_filep_create(qolman_handler_t *handler, FILE *fp, bool close);
+
 #ifdef __cplusplus
 }
 #endif

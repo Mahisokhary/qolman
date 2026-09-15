@@ -24,6 +24,7 @@ extern "C" {
 #include <qolman/record/record.internal.h>
 #include <qolman/formatter/formatter.internal.h>
 #include <qolman/handler/handler.internal.h>
+#include <qolman/manager/manager.internal.h>
 
 #endif
 

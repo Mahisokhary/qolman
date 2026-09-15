@@ -24,6 +24,7 @@ typedef enum {
 #include <qolman/record/record.h>
 #include <qolman/formatter/formatter.h>
 #include <qolman/handler/handler.h>
+#include <qolman/manager/manager.h>
 
 #endif
 

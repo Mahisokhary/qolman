@@ -4,6 +4,7 @@ extern bool test_qolman_level();
 extern bool test_qolman_record();
 extern bool test_qolman_formatter();
 extern bool test_qolman_handler();
+extern bool test_qolman_manager();
 
 bool test_qolman() {
 	bool success = 1;
@@ -11,6 +12,7 @@ bool test_qolman() {
 	success &= test_qolman_record();
 	success &= test_qolman_formatter();
 	success &= test_qolman_handler();
+	success &= test_qolman_manager();
 	return success;
 }
 

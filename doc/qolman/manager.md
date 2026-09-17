@@ -14,8 +14,9 @@ Creates records amd handles levels
 ## Functionality
 
 ### Levels
-priority of handler level is the minimum priority handled by the handle
-> If level of manager and handler are both null all records are handled by handler
+A record is handled by a handler if its level importance is equal or higher than level of both log manager and log handler
+(`record.level >= manager.level && record.level >= handler.level`)
+> `NULL` level means allow all
 
 ## Implementation
 Not implemented

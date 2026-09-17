@@ -12,7 +12,7 @@ static void _handler_destroy(qolman_handler_t handler) {
 	if (data) free(data);
 }
 
-static qolman_result_t _handler_create(qolman_handler_t *handler) {
+qolman_result_t _handler_create(qolman_handler_t *handler) {
 	qolman_run(qolman_handler_create(handler, &_handler_handle, &_handler_destroy, sizeof(char *)));
 	char **datap = (char **) (*handler)->data;
 	*datap = NULL;

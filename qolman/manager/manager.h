@@ -51,6 +51,11 @@ qolman_result_t qolman_manager_formatter_set(qolman_manager_t manager, qolman_fo
  */
 qolman_formatter_t qolman_manager_formatter(qolman_manager_t manager);
 
+/*
+ * Handles a log record
+ */
+qolman_result_t qolman_manager_handle(qolman_manager_t manager, qolman_record_t record);
+
 #ifdef __cplusplus
 }
 #endif

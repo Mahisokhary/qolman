@@ -47,3 +47,21 @@ qolman_formatter_t qolman_manager_formatter(qolman_manager_t m) {
 	return m->formatter;
 }
 
+qolman_result_t qolman_manager_handle(qolman_manager_t m, qolman_record_t r) {
+	if (m->level == NULL || r->level->importance >= m->level->importance) {
+		qolman_handler_t *handlers = m->handlers;
+		size_t handlers_length = m->handlers_length;
+		for (int i = 0; i < handlers_length; i++) {
+			qolman_handler_t h = handlers[i];
+			if (h->level == NULL || r->level->importance >= h->level->importance) {
+				qolman_formatter_t formatter = h->formatter;
+				if (!formatter) formatter = m->formatter;
+				char *str = formatter(r);
+				qolman_run(qolman_handler_handle(h, str));
+				free(str);
+			}
+		}
+	}
+	return QOLMAN_RESULT_OK;
+}
+

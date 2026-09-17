@@ -29,3 +29,12 @@ qolman_handler_t *qolman_manager_handlers(qolman_manager_t m, size_t *length) {
 	return m->handlers;
 }
 
+qolman_result_t qolman_manager_level_set(qolman_manager_t m, qolman_level_t level) {
+	m->level = level;
+	return QOLMAN_RESULT_OK;
+}
+
+qolman_level_t qolman_manager_level(qolman_manager_t m) {
+	return m->level;
+}
+

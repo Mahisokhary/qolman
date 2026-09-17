@@ -21,6 +21,12 @@ bool test_qolman_manager_create_destroy() {
 	success &= qolman_manager_level_set(manager, &level) == QOLMAN_RESULT_OK;
 	success &= qolman_manager_level(manager) == &level;
 
+	success &= qolman_manager_formatter(manager) == &qolman_formatter_text;
+	success &= qolman_manager_formatter_set(manager, NULL) == QOLMAN_RESULT_OK;
+	success &= qolman_manager_formatter(manager) == NULL;
+	success &= qolman_manager_formatter_set(manager, &qolman_formatter_text) == QOLMAN_RESULT_OK;
+	success &= qolman_manager_formatter(manager) == &qolman_formatter_text;
+
 	success &= qolman_manager_destroy(manager) == QOLMAN_RESULT_OK;
 	test_result_log(success);
 	return success;

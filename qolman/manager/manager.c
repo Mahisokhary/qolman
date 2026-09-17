@@ -38,3 +38,12 @@ qolman_level_t qolman_manager_level(qolman_manager_t m) {
 	return m->level;
 }
 
+qolman_result_t qolman_manager_formatter_set(qolman_manager_t m, qolman_formatter_t formatter) {
+	m->formatter = formatter;
+	return QOLMAN_RESULT_OK;
+}
+
+qolman_formatter_t qolman_manager_formatter(qolman_manager_t m) {
+	return m->formatter;
+}
+

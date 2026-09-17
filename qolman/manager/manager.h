@@ -41,6 +41,16 @@ qolman_result_t qolman_manager_level_set(qolman_manager_t manager, qolman_level_
  */
 qolman_level_t qolman_manager_level(qolman_manager_t manager);
 
+/*
+ * Set formatter of the log manager
+ */
+qolman_result_t qolman_manager_formatter_set(qolman_manager_t manager, qolman_formatter_t formatter);
+
+/*
+ * Returns formatter of the log manager
+ */
+qolman_formatter_t qolman_manager_formatter(qolman_manager_t manager);
+
 #ifdef __cplusplus
 }
 #endif

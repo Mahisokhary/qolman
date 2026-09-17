@@ -19,6 +19,9 @@ A record is handled by a handler if its level importance is equal or higher than
 > `NULL` level means allow all
 
 ## Implementation
-Not implemented
+- [x] Properties
+    - [x] default level: getter and setter implemented
+    - [x] default formatter: getter and sett implemented + constructor arg
+    - [x] handlers: getter an setter implemented
 
 [back](index.md)

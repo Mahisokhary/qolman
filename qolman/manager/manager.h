@@ -1,6 +1,12 @@
 #ifndef _qolman_manager_manager_h_
 #define _qolman_manager_manager_h_
 
+#define qolman_manager_handle_trace(m, t, logger, label, description) qolman_manager_handle_quick(m, t, qolman_level_get(-2), logger, label, description)
+#define qolman_manager_handle_debug(m, t, logger, label, description) qolman_manager_handle_quick(m, t, qolman_level_get(-1), logger, label, description)
+#define qolman_manager_handle_info(m, t, logger, label, description) qolman_manager_handle_quick(m, t, qolman_level_get(0), logger, label, description)
+#define qolman_manager_handle_warning(m, t, logger, label, description) qolman_manager_handle_quick(m, t, qolman_level_get(1), logger, label, description)
+#define qolman_manager_handle_error(m, t, logger, label, description) qolman_manager_handle_quick(m, t, qolman_level_get(2), logger, label, description)
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -55,6 +61,11 @@ qolman_formatter_t qolman_manager_formatter(qolman_manager_t manager);
  * Handles a log record
  */
 qolman_result_t qolman_manager_handle(qolman_manager_t manager, qolman_record_t record);
+
+/*
+ * Creates and handler a log record (its quick because you do it in a single function call)
+ */
+qolman_result_t qolman_manager_handle_quick(qolman_manager_t m, time_t t, qolman_level_t level, char *logger, char *label, char *description);
 
 #ifdef __cplusplus
 }

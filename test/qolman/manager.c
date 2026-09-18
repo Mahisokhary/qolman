@@ -38,6 +38,10 @@ bool test_qolman_manager_create_destroy() {
 	success &= strcmp("[2023-02-14 18:01:00] [godlevel] [god] phoenix\n", *(char **) handler->data) == 0;
 	success &= qolman_record_destroy(record) == QOLMAN_RESULT_OK;
 
+	success &= qolman_manager_level_set(manager, NULL) == QOLMAN_RESULT_OK; // So it wont ignore info level
+	success &= qolman_manager_handle_info(manager, 1676385060, "god", "phoenix", NULL) == QOLMAN_RESULT_OK;
+	success &= strcmp("[2023-02-14 18:01:00] [info] [god] phoenix\n", *(char **) handler->data) == 0;
+
 	success &= qolman_manager_destroy(manager) == QOLMAN_RESULT_OK;
 	test_result_log(success);
 	return success;

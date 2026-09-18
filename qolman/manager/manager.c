@@ -65,3 +65,9 @@ qolman_result_t qolman_manager_handle(qolman_manager_t m, qolman_record_t r) {
 	return QOLMAN_RESULT_OK;
 }
 
+qolman_result_t qolman_manager_handle_quick(qolman_manager_t m, time_t t, qolman_level_t level, char *logger, char *label, char *description) {
+	struct qolman_record r = { t, level, label, description, logger };
+	qolman_run(qolman_manager_handle(m, &r));
+	return QOLMAN_RESULT_OK;
+}
+

@@ -1,15 +1,13 @@
 #include <qolman/qolman.internal.h>
 
-qolman_result_t qolman_record_create(qolman_record_t *record, time_t t, qolman_level_t level, char *logger, char *label, char *description) {
+qolman_result_t qolman_record_create(qolman_record_t *record, time_t t, qolman_level_t level, const char *logger, const char *label, const char *description) {
 	if (!t) time(&t);
-	if (description) description = strdup(description);
-	label = strdup(label);
 	qolman_record_t r = malloc(sizeof(struct qolman_record));
 	r->time = t;
 	r->level = level;
 	r->logger = strdup(logger);
-	r->label = label;
-	r->description = description;
+	r->label = strdup(label);
+	r->description = description ? strdup(description) : NULL;
 	*record = r;
 	return QOLMAN_RESULT_OK;
 }
@@ -30,15 +28,15 @@ qolman_level_t qolman_record_level(qolman_record_t r) {
 	return r->level;
 }
 
-char *qolman_record_logger(qolman_record_t r) {
+const char *qolman_record_logger(qolman_record_t r) {
 	return r->logger;
 }
 
-char *qolman_record_label(qolman_record_t r) {
+const char *qolman_record_label(qolman_record_t r) {
 	return r->label;
 }
 
-char *qolman_record_description(qolman_record_t r) {
+const char *qolman_record_description(qolman_record_t r) {
 	return r->description;
 }
 

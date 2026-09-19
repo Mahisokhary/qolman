@@ -11,6 +11,7 @@ qolman_result_t qolman_manager_create(qolman_manager_t *manager, qolman_formatte
 }
 
 qolman_result_t qolman_manager_destroy(qolman_manager_t m) {
+	if (m->handlers) free(m->handlers);
 	free(m);
 	return QOLMAN_RESULT_OK;
 }

@@ -42,6 +42,8 @@ bool test_qolman_manager_create_destroy() {
 	success &= qolman_manager_handle_info(manager, 1676385060, "god", "phoenix", NULL) == QOLMAN_RESULT_OK;
 	success &= strcmp("[2023-02-14 18:01:00] [info] [god] phoenix\n", *(char **) handler->data) == 0;
 
+	for (int i = 0; i < handlers_length; i++)
+		success &= qolman_handler_destroy(handlers[i]) == QOLMAN_RESULT_OK;
 	success &= qolman_manager_destroy(manager) == QOLMAN_RESULT_OK;
 	test_result_log(success);
 	return success;

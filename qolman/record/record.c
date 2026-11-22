@@ -2,12 +2,14 @@
 
 qolman_result_t qolman_record_create(qolman_record_t *record, time_t t, qolman_level_t level, const char *logger, const char *label, const char *description) {
 	if (!t) time(&t);
-	qolman_record_t r = malloc(sizeof(struct qolman_record));
+	qolman_record_t r; qmalloc(r, sizeof(struct qolman_record));
 	r->time = t;
 	r->level = level;
-	r->logger = strdup(logger);
-	r->label = strdup(label);
-	r->description = description ? strdup(description) : NULL;
+	qstrdup(r->logger, logger);
+	qstrdup(r->label, label);
+	if (description) {
+		qstrdup(r->description, description);
+	} else r->description = NULL;
 	*record = r;
 	return QOLMAN_RESULT_OK;
 }

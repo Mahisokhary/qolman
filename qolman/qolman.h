@@ -14,6 +14,7 @@ extern "C" {
  */
 typedef enum {
 	QOLMAN_RESULT_OK = 0,	// Operation was successful
+	QOLMAN_RESULT_OUT_OF_MEMORY = 1,
 } qolman_result_t;
 
 #ifdef __cplusplus

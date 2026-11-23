@@ -12,19 +12,19 @@ bool test_qolman_formatter_text() {
 	bool success = 1;
 
 	formatted = qolman_formatter_text(&record);
-	success &= strcmp(excpected, formatted) == 0;
+	success &= formatted && strcmp(excpected, formatted) == 0;
 	free(formatted);
 
 	// Should ignore description if empty
 	record.description = "";
 	formatted = qolman_formatter_text(&record);
-	success &= strcmp(excpected2, formatted) == 0;
+	success &= formatted && strcmp(excpected2, formatted) == 0;
 	free(formatted);
 
 	// Should ignore description if null
 	record.description = NULL;
 	formatted = qolman_formatter_text(&record);
-	success &= strcmp(excpected2, formatted) == 0;
+	success &= formatted && strcmp(excpected2, formatted) == 0;
 	free(formatted);
 
 	test_result_log(success);

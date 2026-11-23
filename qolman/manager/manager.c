@@ -1,7 +1,7 @@
 #include <qolman/qolman.internal.h>
 
 qolman_result_t qolman_manager_create(qolman_manager_t *manager, qolman_formatter_t formatter) {
-	qolman_manager_t m = malloc(sizeof(struct qolman_manager));
+	qolman_manager_t m; qmalloc(m, sizeof(struct qolman_manager));
 	m->level = NULL;
 	m->formatter = formatter;
 	m->handlers = NULL;
@@ -17,7 +17,7 @@ qolman_result_t qolman_manager_destroy(qolman_manager_t m) {
 }
 
 qolman_result_t qolman_manager_handlers_set(qolman_manager_t m, qolman_handler_t* handlers, size_t length) {
-	qolman_handler_t *hs = malloc(sizeof(qolman_handler_t) * length);
+	qolman_handler_t *hs; qmalloc(hs, sizeof(qolman_handler_t) * length);
 	memcpy(hs, handlers, sizeof(qolman_handler_t) * length);
 	if (m->handlers) free(m->handlers);
 	m->handlers_length = length;
@@ -58,6 +58,7 @@ qolman_result_t qolman_manager_handle(qolman_manager_t m, qolman_record_t r) {
 				qolman_formatter_t formatter = h->formatter;
 				if (!formatter) formatter = m->formatter;
 				char *str = formatter(r);
+				if (!str) return QOLMAN_RESULT_OUT_OF_MEMORY;
 				qolman_run(qolman_handler_handle(h, str));
 				free(str);
 			}
